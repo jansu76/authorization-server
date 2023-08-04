@@ -15,6 +15,7 @@
     <script src="oidc-client.min.js"></script>
     <script>
         new Oidc.UserManager({ response_mode: "query" }).signinRedirectCallback().then(function () {
+            console.log("came back from keycloak to signin-callback");
             window.location = "index.html";
         }).catch(function (e) {
             console.error(e);

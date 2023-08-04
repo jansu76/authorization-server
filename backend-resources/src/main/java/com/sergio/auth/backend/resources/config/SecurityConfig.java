@@ -1,6 +1,7 @@
 package com.sergio.auth.backend.resources.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -16,7 +17,10 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
         http.mvcMatcher("/**")
+                .cors(Customizer.withDefaults())
+//                .cors(cors -> cors.disable())
                 .authorizeRequests()
                 .mvcMatchers("/**")
                 .access("hasAuthority('SCOPE_message.read')")

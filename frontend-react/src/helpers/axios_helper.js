@@ -8,7 +8,7 @@ const _callApi = (token) => {
         Authorization: "Bearer " + token
     };
 
-    return axios.get("http://backend-gateway-client:8083/messages", { headers });
+    return axios.get("http://backend-resources:8082/messages", { headers });
 }
 
 export const callApi = () => {
