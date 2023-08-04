@@ -14,7 +14,6 @@ The following lines must be added in ```/etc/hosts``` to avoid having the browse
 URL overriding values from the different backends.
 ```
 127.0.0.1       backend-auth
-127.0.0.1       backend-gateway-client
 127.0.0.1       backend-resources
 ```
 
@@ -26,7 +25,6 @@ No need for this, keycloak docker-compose starts it's own
 
 ```
 backend-keycloak-auth$ docker compose up
-backend-gateway-client$ mvn spring-boot:run
 backend-resources$ mvn spring-boot:run
 frontend-react$ npm i
 frontend-react$ npm run start
