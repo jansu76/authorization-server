@@ -20,11 +20,24 @@ URL overriding values from the different backends.
 
 ### Local Database
 
-The backend-auth needs a database where to store the credentials. The following docker command will create it.
+No need for this, keycloak docker-compose starts it's own
+
+### Starting up
 
 ```
-docker run -d -e POSTGRES_HOST_AUTH_METHOD=trust -e POSTGRES_USER=auth_usr -e POSTGRES_PASSWORD=pwd -e POSTGRES_DB=authdb -p 5434:5432 postgres:13
+backend-keycloak-auth$ docker compose up
+backend-gateway-client$ mvn spring-boot:run
+backend-resources$ mvn spring-boot:run
+frontend-react$ npm i
+frontend-react$ npm run start
 ```
+
+### Client and user configuration
+
+See youtube video for client configuration.
+
+In addition to that, you need to add a user with some password.
+
 
 ## Chapter 1
 
