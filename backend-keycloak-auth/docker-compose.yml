@@ -1,29 +1,43 @@
 version: '3'
 
 services:
-  db:
+  db2:
     image: postgres:13.5
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_USER: my_admin
+      POSTGRES_USER: my_admin2
       POSTGRES_PASSWORD: my_password
       POSTGRES_DB: keycloak_db
     ports:
       - 5432:5432
-  kc:
-    image: quay.io/keycloak/keycloak:legacy
+  kc2:
+    image: quay.io/keycloak/keycloak:latest
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: db
       DB_DATABASE: keycloak_db
-      DB_USER: my_admin
+      DB_USER: my_admin2
       DB_SCHEMA: public
       DB_PASSWORD: my_password
       KEYCLOAK_HOSTNAME: backend-keycloak-auth
-      KEYCLOAK_USER: kc_admin
-      KEYCLOAK_PASSWORD: kc_password
+      KEYCLOAK_ADMIN: kc_admin
+      KEYCLOAK_ADMIN_PASSWORD: kc_password
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt.pem
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key.pem
+    command:
+      - start-dev --import-realm
+    volumes:
+      - /home/janne/projects/häti/prototyping/keycloak/evaka-example:/opt/keycloak/data/import
+      - $PWD/server.crt.pem:/opt/keycloak/conf/server.crt.pem
+      - $PWD/server.key.pem:/opt/keycloak/conf/server.key.pem
     ports:
       - 8080:8080
+      - 443:8443
     depends_on:
-      - db
-
+      - db2
+      - smtp
+  smtp:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025" # smtp
+      - "8025:8025" # http

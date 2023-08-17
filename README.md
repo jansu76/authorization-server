@@ -30,6 +30,120 @@ frontend-react$ npm i
 frontend-react$ npm run start
 ```
 
+### Keycloak config for Suomifi auth
+
+These match metadata ilta-test-metadata-keycloak-redirect-fixed.xml, which is in main repo branch ILTA-196-suomifi-saml-prototypes
+
+```
+1.  Create new realm (name it `evaka-customer` for example)
+    -   Keys:
+        -   Providers:
+            -   `rsa-generated` -> Delete
+            -   `rsa-enc-generated` -> Delete
+            -   Add keystore... -> `rsa`
+                -   Console Display Name: rsa `(default)`
+                -   Priority: 0 `(default)`
+                -   Enabled: On `(default)`
+                -   Active: On `(default)`
+                -   Algorithm: RS256 `(default)`
+                -   Private RSA Key: `(Select file: ilta-test.key, or whichever corresponds to metadata)`
+                -   X509 Certificate: `(Select file: ilta-test.crt, or whichever corresponds to metadata)`
+                -   Key use: sig `(default)`
+            -   Add provider -> `rsa-enc`
+                -   Name: rsa-enc `(default)`
+                -   Priority: 0 `(default)`
+                -   Enabled: On `(default)`
+                -   Active: On `(default)`
+                -   Private RSA Key: `(Select file: ilta-test.key, or whichever corresponds to metadata)`
+                -   X509 Certificate: `(Select file: ilta-test.crt, or whichever corresponds to metadata)`
+                -   Algorithm: RSA-OAEP `(default)`
+    -   Email:
+        -   Host: `smtp`
+        -   Port: `1025`
+        -   Other as defaults
+2.  Client settings as in video, plus maybe
+    4.  Navigate to `Mappers` (tab) and create following mappers
+        -   lastName
+            -   Name: lastName
+            -   Mapper Type: User Property
+            -   Property: lastName
+            -   Friendly Name: lastName
+            -   SAML Attribute Name: lastName
+            -   SAML Attribute NameFormat: Basic
+        -   firstName
+            -   Name: firstName
+            -   Mapper Type: User Property
+            -   Property: firstName
+            -   Friendly Name: firstName
+            -   SAML Attribute Name: firstName
+            -   SAML Attribute NameFormat: Basic
+        -   id
+            -   Name: id
+            -   Mapper Type: User Property
+            -   Property: id
+            -   Friendly Name: id
+            -   SAML Attribute Name: id
+            -   SAML Attribute NameFormat: Basic
+        -   email
+            -   Name: email
+            -   Mapper Type: User Property
+            -   Property: email
+            -   Friendly Name: email
+            -   SAML Attribute Name: email
+            -   SAML Attribute NameFormat: Basic
+        -   socialSecurityNumber
+            -   Name: socialSecurityNumber
+            -   Mapper Type: User Attribute **(!)**
+            -   User Attribute: socialSecurityNumber
+            -   Friendly Name: socialSecurityNumber
+            -   SAML Attribute Name: socialSecurityNumber
+            -   SAML Attribute NameFormat: Basic
+
+3.  Add Identity provider
+    - Navigate to `Identity Providers` -> `Add provider...` -> `SAML v2.0`
+        -   Settings
+        -   Can try to autoconfig using https://static.apro.tunnistus.fi/static/metadata/idp-metadata.xml, but there was some error that required at least manual fixes
+            -   Display Name: suomifi-ilta-saml
+            -   Service provider entity ID: https://ilta.112.fi/auth/dev/keycloak/redirect2 (or whichever metadata you are using)
+            -   Identity provider metadata: https://testi.apro.tunnistus.fi/idp1
+            -   Single Sign-On Service URL:
+                -   test: https://testi.apro.tunnistus.fi/idp/profile/SAML2/Redirect/SSO
+            -   Single Logout Service URL:
+                -   test: https://testi.apro.tunnistus.fi/idp/profile/SAML2/POST/SLO
+            -   NameID Policy Format: Transient
+            -   Principal Type: Attribute [Friendly Name]
+            -   Principal Attribute: nationalIdentificationNumber
+            -   HTTP-POST Binding Response: On
+            -   HTTP-POST Binding for AuthnRequest: Off (could also use On)
+            -   HTTP-POST Binding Logout: On
+            -   Want AuthnRequests Signed: On
+            -   Want Assertions Signed: On
+            -   Want Assertions encrypted: on
+            -   Force authentication: Off
+            -   Validate Signature: On
+            -   Validating X509 Certificates:
+                -   test: signing certificate from https://static.apro.tunnistus.fi/static/metadata/idp-metadata.xml
+        -   Mappers
+            -   givenName
+                -   Name: givenName
+                -   Sync Mode Override: force
+                -   Mapper Type: Attribute Importer
+                -   Friendly Name: givenName
+                -   User Attribute Name: firstName
+            -   sn
+                -   Name: sn
+                -   Sync Mode Override: force
+                -   Mapper Type: Attribute Importer
+                -   Friendly Name: sn
+                -   User Attribute Name: lastName
+            -   nationalIdentificationNumber
+                -   Name: nationalIdentificationNumber
+                -   Sync Mode Override: force
+                -   Mapper Type: Attribute Importer
+                -   Friendly Name: nationalIdentificationNumber
+                -   User Attribute Name: socialSecurityNumber
+```
+
 ### Client and user configuration
 
 See youtube video for client configuration.
