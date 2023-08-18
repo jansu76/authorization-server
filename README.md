@@ -21,10 +21,14 @@ URL overriding values from the different backends.
 
 No need for this, keycloak docker-compose starts it's own
 
+### Keycloak
+
+This branch does not have Keycloak! It attempts to do it all in pure Spring Boot / Security
+
+
 ### Starting up
 
 ```
-backend-keycloak-auth$ docker compose up
 backend-resources$ mvn spring-boot:run
 frontend-react$ npm i
 frontend-react$ npm run start

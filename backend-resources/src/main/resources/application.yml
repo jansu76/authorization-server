@@ -3,10 +3,21 @@ server:
 
 spring:
   application.name: backend-resources
-  # the current backend is configured to be used as a resource server
-  # then, I must indicate the URI of the backend-auth to be used and which token to be used
   security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://backend-keycloak-auth:8080/realms/My_realm
+    saml2:
+      relyingparty:
+        registration:
+          fubar:
+            signing:
+              credentials:
+                - private-key-location: classpath:ilta-test.key
+                  certificate-location: classpath:ilta-test.crt
+            singlelogout:
+              binding: POST
+              response-url: "{baseUrl}/logout/saml2/slo"
+            assertingparty:
+              metadata-uri: "classpath:idp-metadata.xml"
+            acs:
+              location: "http://backend-keycloak-auth:8080/realms/My_realm/broker/suomifi-ilta-saml/endpoint"
+            entity-id: "https://ilta.112.fi/auth/dev/keycloak/redirect2"
+

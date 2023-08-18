@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" entityID="https://testi.apro.tunnistus.fi/idp1"><ds:Signature>
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<ds:Reference URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<ds:DigestValue>MHNED/Lrigy4L+4NJug+nHIymR7lfFXJo29NiKxMvjA=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+PYj47FIoVGI/10aP6Zvq0cTPyCGe6QVO7CopdYd0Ufp92ydTyYfwLrX5BNfaTVkFF8IlfX0Shx22
+mTn+QXrMhXW0MxVlwnj1yGBwEhrDm/r1or+JNrN5vuiQckZ8SyNUsI/GNxkuDkxHx52PplRdSUhw
+JG18xAARTz3xAoW1a3woDrpg7/J7Gmz8wn+gq37AbD8jQWkSIZcujsp6KqAj6eanz/yEVNbfIBcQ
+kt8MQ7YVKtBRqsR1a1q64/lTYunax4/7YY/PmirSW4l1tQdciQ2H+ykN7YBS/JmCB2gIO6Z/IwhY
++MGq/F4rJliRo5W9MiOogV4Xkh9wFmxe6vV2Bg==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+zwwALSbjErCcTrwnYU0IJLV/VbjtsJkBxhp5iktvWHhpXG7b4cQR2kqqDXKFPhWDiZdVWZZZg9Ji
+UKIiZIbSQMIhMJ0+KPoqE+5QNClD1kJeM/RDxS7y476FTkjKdPre+L8M88vQTFW4rBI6hpwDU8fU
+qqC4XHrgU0P6zeCQO/2VBQLa+XT6A/Gpd68cJtE5Ms8jt/xE3Az0kWsRWoEIM9L8awiig2l4qGJh
+F+4UDngffb8CgqaYMR4H8xZt3QfZ4u1pvFG6FSzw9WtJY93yoZm2KQCRmDTcocc1OX6aROf08BoB
+9cWkNL8e5xw4VAbcau2UJgisO2/fDhB7HhCjgQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIGnTCCBIWgAwIBAgIPAYM65sp2PJ9Syg60+XwDMA0GCSqGSIb3DQEBDQUAMIGHMQswCQYDVQQG
+EwJGSTEpMCcGA1UECgwgRGlnaS0gamEgdmFlc3RvdGlldG92aXJhc3RvIFRFU1QxHzAdBgNVBAsM
+FlRlc3RpcGFsdmVsdXZhcm1lbnRlZXQxLDAqBgNVBAMMI0RWViBURVNUIFNlcnZpY2UgQ2VydGlm
+aWNhdGVzIC0gRzJSMB4XDTIyMDkxNDA2NTY1NloXDTI0MDkxNDIwNTk1OVowgZkxCzAJBgNVBAYT
+AkZJMRAwDgYDVQQIDAdGSU5MQU5EMREwDwYDVQQHDAhIZWxzaW5raTEkMCIGA1UECgwbRGlnaS0g
+amEgdmFlc3RvdGlldG92aXJhc3RvMRIwEAYDVQQFEwkwMjQ1NDM3LTIxKzApBgNVBAMMIm1ldGFk
+YXRhLXNpZ25pbmcuYXByby50dW5uaXN0dXMuZmkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPDAAtJuMSsJxOvCdhTQgktX9VuO2wmQHGGnmKS29YeGlcbtvhxBHaSqoNcoU+FYOJl1VZ
+llmD0mJQoiJkhtJAwiEwnT4o+ioT7lA0KUPWQl4z9EPFLvLjvoVOSMp0+t74vwzzy9BMVbisEjqG
+nANTx9SqoLhceuBTQ/rN4JA7/ZUFAtr5dPoD8al3rxwm0TkyzyO3/ETcDPSRaxFagQgz0vxrCKKD
+aXioYmEX7hQOeB99vwKCppgxHgfzFm3dB9ni7Wm8UboVLPD1a0lj3fKhmbYpAJGYNNyhxzU5fppE
+5/TwGgH1xaQ0vx7nHDhUBtxq7ZQmCKw7b98OEHseEKOBAgMBAAGjggHwMIIB7DAfBgNVHSMEGDAW
+gBQ0BfLbBt0zIGzhCAfHbE/wbKQedDAdBgNVHQ4EFgQUKSjLi6RLcukkdxkbjU77jDBZ4tkwDgYD
+VR0PAQH/BAQDAgbAMIHXBgNVHSAEgc8wgcwwCAYGBACPegEHMIG/BgoqgXaEBWMKgjECMIGwMCcG
+CCsGAQUFBwIBFhtodHRwOi8vd3d3LmZpbmVpZC5maS9jcHM5OS8wgYQGCCsGAQUFBwICMHgadlZh
+cm1lbm5lcG9saXRpaWtrYSBvbiBzYWF0YXZpbGxhIC0gQ2VydGlmaWthdHBvbGljeSBmaW5ucyAt
+IENlcnRpZmljYXRlIHBvbGljeSBpcyBhdmFpbGFibGUgaHR0cDovL3d3dy5maW5laWQuZmkvY3Bz
+OTkwDwYDVR0TAQH/BAUwAwEBADA5BgNVHR8EMjAwMC6gLKAqhihodHRwOi8vcHJveHkuZmluZWlk
+LmZpL2NybC9kdnZ0c3AycmMuY3JsMHQGCCsGAQUFBwEBBGgwZjAzBggrBgEFBQcwAoYnaHR0cDov
+L3Byb3h5LmZpbmVpZC5maS9jYS9kdnZ0c3AycmMuY3J0MC8GCCsGAQUFBzABhiNodHRwOi8vb2Nz
+cHRlc3QuZmluZWlkLmZpL2R2dnRzcDJyYzANBgkqhkiG9w0BAQ0FAAOCAgEAYfPe8/CL7esMeEPV
+DktnCNg+IDHoztt9XpEelMlC7dUMh2OEzm+NHxb7MdpZ+mFZ8jq1883qqaddMMIto/Sn7p5o0gvM
+3pWqWCoc0hjq/+qWtGogZgor0pbc5kYJ0lvnRkk7VFp/yujjEklfJX1/14sBGjVImjbYXvHdYAkd
+S/ofXtFQ/hCYjqd0eArCJ78W+cWBbs2pK93G1wUgBkUH/glOxLRGTwpzeqbpMxecgypi/DVIbjjH
+3Kfv87gwEDWwrAKyB8qH5qjp5sDoZUbC8VbtRtnAEGW4v8jHxCXYOFoaHGHYb91aIa5DsejIesKD
+gWq3swn2qmmS4TlmNfcT2fQpqlIVuQZ5Pg1hWe2/0yBnMw8Bt1yfNz5pywi9oFSVwFtR8uf8UgPK
+whX2KKIdIZmKNYKv/EwwCPVaNPLtYzFflOTEIO1XcnLNZVb486Nyo33fFQJkLATiqIb4QP1WD/J1
+I+VRP1s4U08ORN20AAhNzqNkQk7DUxt+tN/czDh4Q1SS8XojizuMuQNo5Mh7qyOLm2+l38OQFIeB
+7GuMajtzVXG4OuAoUj9PGlquqOE1ckMgILZpU2cHxyNfks4wvgFvQZosv5UkPcDvkXtHzzh61yr3
+c/DJNmC9YpgyBOWPJLgxpWgPoQQfWQBzb4Wwzor4HlQBr8qSGGR9Zfessy8=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+<IDPSSODescriptor WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <mdui:UIInfo>
+                <mdui:DisplayName xml:lang="fi">Suomi.fi-tunnistus, testiympäristö</mdui:DisplayName>
+                <mdui:DisplayName xml:lang="en">Suomi.fi-identification, test environment</mdui:DisplayName>
+                <mdui:DisplayName xml:lang="sv">Suomi.fi-identifikation, testmiljö</mdui:DisplayName>
+                <mdui:Description xml:lang="fi">Suomi.fi-tunnistus, testiympäristö</mdui:Description>
+                <mdui:Description xml:lang="en">Suomi.fi-identification, test environment</mdui:Description>
+                <mdui:Description xml:lang="sv">Suomi.fi-identifikation, testmiljö</mdui:Description>
+                <mdui:Logo height="70" width="752">https://testi.apro.tunnistus.fi/resources/img/logo_fi.svg</mdui:Logo>
+            </mdui:UIInfo>
+        </Extensions>
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIHJzCCBQ+gAwIBAgIEBgVNqjANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJG
+STEjMCEGA1UEChMaVmFlc3RvcmVraXN0ZXJpa2Vza3VzIFRFU1QxGDAWBgNVBAsT
+D1Rlc3RpdmFybWVudGVldDEmMCQGA1UEAxMdVlJLIENBIGZvciBUZXN0IFB1cnBv
+c2VzIC0gRzMwHhcNMjAxMDA4MTEyNjEyWhcNMjIxMDA4MjA1OTU5WjCBmzELMAkG
+A1UEBhMCRkkxEDAOBgNVBAgTB0ZJTkxBTkQxETAPBgNVBAcTCEhlbHNpbmtpMSQw
+IgYDVQQKExtEaWdpLSBqYSB2YWVzdG90aWV0b3ZpcmFzdG8xEjAQBgNVBAUTCTAy
+NDU0MzctMjEtMCsGA1UEAxMkc2FtbC1zaWduaW5nLXRlc3RpLmFwcm8udHVubmlz
+dHVzLmZpMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAuIBsdZOhAkGq
+z8QfDG9LLNFACOvKI2PxxXjhkI5hLdrtYsYhcKNkLLX66ASyefpOBt0OsG74FWif
+x3hUlK4pt/t8LBGixBWs6A1aKsQL8McriGDjTaK3ynQP8ffJ48ECDcKWkUaGeH2f
+SnZ7yLjtW4MH3gtQGYJNLQ3qAqE6RstXoMqlpkx12rbNk1EgZcksxa8aY4tThACR
+Vsc3MVBzIVwkT6U+Lxnxy3SC8qxX4vHxPhF7C1GbzLPqeI5oRJUMsXqX/Z6xh9om
+0ZPoT27XPW731mSD6eu7W0LinYxOcMWPkjqS0zLiKFn3Mxml/XSRSOnFKMJm+Dxi
+sriAj1OwomotKhE/PReXYg7gjQCvU8xZcOtHnsYZrOAampDgzv/ehG41GEEHbSl2
+Vj8f/r2/pVK037oMW2cezDUaTX7P9yYsKANOTzM1eADLLbdnXT5i0J5ABbbRPrww
+RJ77My0LFPgtFjLQTMOMcy7GssjZUibS2gjta5nTEGIJ5Q/R71ArAgMBAAGjggIX
+MIICEzAfBgNVHSMEGDAWgBRbzoacx1ND5gK5+3FsjG2jIOWx+DAdBgNVHQ4EFgQU
+jLExkibI7kFQ49WG6qWT4xeKxcYwDgYDVR0PAQH/BAQDAgTwMIHXBgNVHSAEgc8w
+gcwwCAYGBACPegEHMIG/BgkqgXaEBWMKIgEwgbEwJwYIKwYBBQUHAgEWG2h0dHA6
+Ly93d3cuZmluZWlkLmZpL2Nwczk5LzCBhQYIKwYBBQUHAgIweRp3VmFybWVubmVw
+b2xpdGlpa2thIG9uIHNhYXRhdmlsbGEgLSBDZXJ0aWZpa2F0IHBvbGljeSBmaW5u
+cyAtIENlcnRpZmljYXRlIHBvbGljeSBpcyBhdmFpbGFibGUgaHR0cDovL3d3dy5m
+aW5laWQuZmkvY3BzOTkwDwYDVR0TAQH/BAUwAwEBADA3BgNVHR8EMDAuMCygKqAo
+hiZodHRwOi8vcHJveHkuZmluZWlkLmZpL2NybC92cmt0cDNjLmNybDBuBggrBgEF
+BQcBAQRiMGAwMAYIKwYBBQUHMAKGJGh0dHA6Ly9wcm94eS5maW5laWQuZmkvY2Ev
+dnJrdHAzLmNydDAsBggrBgEFBQcwAYYgaHR0cDovL29jc3B0ZXN0LmZpbmVpZC5m
+aS92cmt0cDMwLQYIKwYBBQUHAQMEITAfMAgGBgQAjkYBATATBgYEAI5GAQYwCQYH
+BACORgEGAzANBgkqhkiG9w0BAQsFAAOCAgEAP4WX7UETslDuT7TK4qbvE9nVGTL3
+OfXz9Ixn5wgnNg7LcbJmHnMAu+w4SCp0RcHZ/Y4uO+M5IN9hiacD+VI5e0OMWrpv
+vFEzNG3qc02yVNZcFBvHCORe3Ugx3pAQ3UfaiOhoExRJBX2tgToSkEFIwy4hqJX6
+bd/LVcCpdz34Ncgp2y7j58o6KfnQzKbq+bj0iqQuwiLG2oPObHhvL8Y8KQNghit8
+bXtV7RRq50Alheh/+YAv7MxutSCR5fZA6m8SzkOzFzYoEUxKmA5hKyB+dSJ3kPpC
+I9DWYGUzUYEy8Wi4GjSbja4cGqt3kWuqEIek7VznBZn1xfcwc6YdJ1bmKgVEdPhm
+pDKK16KLHga/oztKwZiAZN3yW8UI9yNjuBbq3MDWBBUyEAxMrt8EibLIcgTrBN8l
+RdwO3o7L2sLObbiun3kLuiQnnNNY1NS73BZ3KZmvJ7gN080mFoyXSBGFD3mihFhR
+oNQaYsZx3w5F8gJ1NWG+JLQbM4MRod6MKEgHV/tJvdjOg6qNokahYaROo3Fww3p3
+8ifPWOtfT2BLYnQkArup8Wr7MEt+h7VWgwIOdV3VGRAkF2cdpNZQ5FMKzeBLjC73
+nyOEMVQIFfRXbNevNA887Vu6g80EN9lQq0cMQGoLPTcRQXIUpD1NmjVJmRyNJK6F
++Kbu8aRtFKgOGoU=
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIHHzCCBQegAwIBAgIPAYM66EUmUIqwHORHIM4aMA0GCSqGSIb3DQEBDQUAMIGH
+MQswCQYDVQQGEwJGSTEpMCcGA1UECgwgRGlnaS0gamEgdmFlc3RvdGlldG92aXJh
+c3RvIFRFU1QxHzAdBgNVBAsMFlRlc3RpcGFsdmVsdXZhcm1lbnRlZXQxLDAqBgNV
+BAMMI0RWViBURVNUIFNlcnZpY2UgQ2VydGlmaWNhdGVzIC0gRzJSMB4XDTIyMDkx
+NDA3MDAyNloXDTI0MDkxNDIwNTk1OVowgZsxCzAJBgNVBAYTAkZJMRAwDgYDVQQI
+DAdGSU5MQU5EMREwDwYDVQQHDAhIZWxzaW5raTEkMCIGA1UECgwbRGlnaS0gamEg
+dmFlc3RvdGlldG92aXJhc3RvMRIwEAYDVQQFEwkwMjQ1NDM3LTIxLTArBgNVBAMM
+JHNhbWwtc2lnbmluZy10ZXN0aS5hcHJvLnR1bm5pc3R1cy5maTCCAaIwDQYJKoZI
+hvcNAQEBBQADggGPADCCAYoCggGBALiAbHWToQJBqs/EHwxvSyzRQAjryiNj8cV4
+4ZCOYS3a7WLGIXCjZCy1+ugEsnn6TgbdDrBu+BVon8d4VJSuKbf7fCwRosQVrOgN
+WirEC/DHK4hg402it8p0D/H3yePBAg3ClpFGhnh9n0p2e8i47VuDB94LUBmCTS0N
+6gKhOkbLV6DKpaZMddq2zZNRIGXJLMWvGmOLU4QAkVbHNzFQcyFcJE+lPi8Z8ct0
+gvKsV+Lx8T4RewtRm8yz6niOaESVDLF6l/2esYfaJtGT6E9u1z1u99Zkg+nru1tC
+4p2MTnDFj5I6ktMy4ihZ9zMZpf10kUjpxSjCZvg8YrK4gI9TsKJqLSoRPz0Xl2IO
+4I0Ar1PMWXDrR57GGazgGpqQ4M7/3oRuNRhBB20pdlY/H/69v6VStN+6DFtnHsw1
+Gk1+z/cmLCgDTk8zNXgAyy23Z10+YtCeQAW20T68MESe+zMtCxT4LRYy0EzDjHMu
+xrLI2VIm0toI7WuZ0xBiCeUP0e9QKwIDAQABo4IB8DCCAewwHwYDVR0jBBgwFoAU
+NAXy2wbdMyBs4QgHx2xP8GykHnQwHQYDVR0OBBYEFIyxMZImyO5BUOPVhuqlk+MX
+isXGMA4GA1UdDwEB/wQEAwIGwDCB1wYDVR0gBIHPMIHMMAgGBgQAj3oBBzCBvwYK
+KoF2hAVjCoIxAjCBsDAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5maW5laWQuZmkv
+Y3BzOTkvMIGEBggrBgEFBQcCAjB4GnZWYXJtZW5uZXBvbGl0aWlra2Egb24gc2Fh
+dGF2aWxsYSAtIENlcnRpZmlrYXRwb2xpY3kgZmlubnMgLSBDZXJ0aWZpY2F0ZSBw
+b2xpY3kgaXMgYXZhaWxhYmxlIGh0dHA6Ly93d3cuZmluZWlkLmZpL2Nwczk5MA8G
+A1UdEwEB/wQFMAMBAQAwOQYDVR0fBDIwMDAuoCygKoYoaHR0cDovL3Byb3h5LmZp
+bmVpZC5maS9jcmwvZHZ2dHNwMnJjLmNybDB0BggrBgEFBQcBAQRoMGYwMwYIKwYB
+BQUHMAKGJ2h0dHA6Ly9wcm94eS5maW5laWQuZmkvY2EvZHZ2dHNwMnJjLmNydDAv
+BggrBgEFBQcwAYYjaHR0cDovL29jc3B0ZXN0LmZpbmVpZC5maS9kdnZ0c3AycmMw
+DQYJKoZIhvcNAQENBQADggIBAG5R9q2o/QuGwFZ+aPDC4BsUKMq3uIQY30BpFVfu
+0T/oVqZQdAhRUBp0iOSF/a9yj+sqmLKaMADgYUdRZZTBo24Of3THDEgS9bMfgzcq
+Gfn4hG76rxntcC5IQrSzqYuLJM+lPrn9E5ocRsNUx0sQcdn0zWdmhoqV2Y1t4k73
+ZwZuYIWGDwG/0V0f0QMdCwofmALIrNb4SOd7T0UgTVKvINeIiZsfUYjvKidP4h3E
+2BJSZGb07dQG9qVJc68zxSK1wOE7RcJolzneIBGxvrbu7MWaHskmSiN6Qswz92gb
+kM4Piyyk3VEEaQUA39esQ8LZ9mAYh8hwbDXBx0QF1rV9H7gGYLAU4JUT/zrUHRcv
+x91WWs/B9RHdWQISM24OlZtPsEXwKd3IMvQMxbzaogv07vhTpt+FJcnsnMxlX9vm
+3yYR79sktkJqnARxigDL3RV9vBiQTyW1AKDROQIR7lYeBihk3464VExVtlrKXwWI
+FpCSyIR8Uilr00ioUbpXhHFXVdh9bN/Bd06WeJb0XnAF7u9ibhIUbXvAxuffg9yw
+8HbcGLsfUbKBGvRT5UeZro9qclEbwCseNxjkox/0cmf3XLpl+lQ9G2EIbcuhN3EI
+eBWW7YlYQSvjn8RGExfX7zw49NTD7YijDiQnoitCrBWImOFPt7mK75xuJD4dTL6F
+7inH
+                   </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://testi.apro.tunnistus.fi/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://testi.apro.tunnistus.fi/idp/profile/SAML2/Redirect/SLO"/>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://testi.apro.tunnistus.fi/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://testi.apro.tunnistus.fi/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+    <Organization>
+        <OrganizationName xml:lang="fi">Digi- ja väestötietovirasto</OrganizationName>
+        <OrganizationName xml:lang="en">Digital and Population Data Services Agency</OrganizationName>
+        <OrganizationName xml:lang="sv">Myndigheten för digitalisering och befolkningsdata</OrganizationName>
+        <OrganizationDisplayName xml:lang="fi">Väestörekisterikeskus</OrganizationDisplayName>
+        <OrganizationDisplayName xml:lang="en">Digital and Population Data Services Agency</OrganizationDisplayName>
+        <OrganizationDisplayName xml:lang="sv">Myndigheten för digitalisering och befolkningsdata</OrganizationDisplayName>
+        <OrganizationURL xml:lang="fi">https://dvv.fi/fi</OrganizationURL>
+        <OrganizationURL xml:lang="en">https://dvv.fi/en</OrganizationURL>
+        <OrganizationURL xml:lang="sv">https://dvv.fi/sv</OrganizationURL>
+    </Organization>
+    <ContactPerson contactType="technical">
+        <GivenName>Suomi.fi-tunnistus</GivenName>
+        <SurName>Kayttoonotot</SurName>
+        <EmailAddress>mailto:tunnistus-kayttoonotot@dvv.fi</EmailAddress>
+    </ContactPerson>
+    <ContactPerson contactType="administrative">
+        <GivenName>Suomi.fi</GivenName>
+        <SurName>Palvelupiste</SurName>
+        <EmailAddress>mailto:suomi.fi-palvelupiste@dvv.fi</EmailAddress>
+    </ContactPerson>
+</EntityDescriptor>

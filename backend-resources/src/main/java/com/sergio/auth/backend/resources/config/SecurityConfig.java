@@ -1,32 +1,41 @@
 package com.sergio.auth.backend.resources.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.config.Customizer;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.saml2.provider.service.metadata.OpenSamlMetadataResolver;
+import org.springframework.security.saml2.provider.service.servlet.filter.Saml2WebSsoAuthenticationFilter;
+import org.springframework.security.saml2.provider.service.web.DefaultRelyingPartyRegistrationResolver;
+import org.springframework.security.saml2.provider.service.web.RelyingPartyRegistrationResolver;
+import org.springframework.security.saml2.provider.service.web.Saml2MetadataFilter;
+import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
+@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
-    /**
-     * For the backend-resources, I indicate that all the endpoints are protected.
-     * To request any endpoint, the OAuth2 protocol is necessary, using the server configured and with the given scope.
-     * Thus, a JWT will be used to communicate between the backend-resources and backend-auth when backend-resources
-     * needs to validate the authentication of a request.
-     */
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    @Autowired
+    private RelyingPartyRegistrationRepository relyingPartyRegistrationRepository;
 
-        http.mvcMatcher("/**")
-                .cors(Customizer.withDefaults())
-//                .cors(cors -> cors.disable())
-                .authorizeRequests()
-                .mvcMatchers("/**")
-                .access("hasAuthority('SCOPE_message.read')")
-                .and()
-                .oauth2ResourceServer()
-                .jwt();
-        return http.build();
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        DefaultRelyingPartyRegistrationResolver relyingPartyRegistrationResolver = new DefaultRelyingPartyRegistrationResolver(this.relyingPartyRegistrationRepository);
+        Saml2MetadataFilter filter = new Saml2MetadataFilter(
+                (RelyingPartyRegistrationResolver) relyingPartyRegistrationResolver,
+                new OpenSamlMetadataResolver());
+
+        http.authorizeHttpRequests(authorize -> authorize.anyRequest()
+                        .authenticated())
+                .saml2Login(withDefaults())
+                .saml2Logout(withDefaults())
+                .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class);
+        DefaultSecurityFilterChain chain = http.build();
+        return chain;
     }
 }
