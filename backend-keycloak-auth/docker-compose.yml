@@ -11,7 +11,7 @@ services:
     ports:
       - 5432:5432
   kc2:
-    image: quay.io/keycloak/keycloak:latest
+    image: keycloak-backup-20230817
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: db
@@ -24,8 +24,14 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: kc_password
       KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt.pem
       KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key.pem
+      KC_DECLARATIVE_USER_PROFILE_ENABLED: true
+      KC_HEALTH_ENABLED: true
+      ENV KC_METRICS_ENABLED: true
     command:
-      - start-dev --import-realm
+      - start-dev
+      - --import-realm
+      - --features declarative-user-profile
+      - --log-level="TRACE,org.keycloak.saml.SAMLRequestParser:debug,org.keycloak.saml.SAML2LoginResponseBuilder:trace"
     volumes:
       - /home/janne/projects/häti/prototyping/keycloak/evaka-example:/opt/keycloak/data/import
       - $PWD/server.crt.pem:/opt/keycloak/conf/server.crt.pem
