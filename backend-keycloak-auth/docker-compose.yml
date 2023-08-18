@@ -11,7 +11,7 @@ services:
     ports:
       - 5432:5432
   kc2:
-    image: keycloak-backup-20230817
+    image: quay.io/keycloak/keycloak:latest
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: db
@@ -24,9 +24,6 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: kc_password
       KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt.pem
       KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key.pem
-      KC_DECLARATIVE_USER_PROFILE_ENABLED: true
-      KC_HEALTH_ENABLED: true
-      ENV KC_METRICS_ENABLED: true
     command:
       - start-dev
       - --import-realm
