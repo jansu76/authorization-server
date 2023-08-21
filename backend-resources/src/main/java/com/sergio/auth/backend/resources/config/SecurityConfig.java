@@ -33,9 +33,13 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorize -> authorize.anyRequest()
                         .authenticated())
                 .saml2Login(withDefaults())
+                .saml2Login(h -> h.loginProcessingUrl("/realms/My_realm/broker/suomifi-ilta-saml/{registrationId}"))
                 .saml2Logout(withDefaults())
                 .addFilterBefore(filter, Saml2WebSsoAuthenticationFilter.class);
         DefaultSecurityFilterChain chain = http.build();
         return chain;
+
+
+//             .saml2Login(h -> h.loginProcessingUrl("/login/{registrationId}"));
     }
 }

@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   application.name: backend-resources
@@ -7,7 +7,7 @@ spring:
     saml2:
       relyingparty:
         registration:
-          fubar:
+          endpoint:
             signing:
               credentials:
                 - private-key-location: classpath:ilta-test.key
@@ -15,9 +15,10 @@ spring:
             singlelogout:
               binding: POST
               response-url: "{baseUrl}/logout/saml2/slo"
+#            assertionConsumerServiceLocation: """
             assertingparty:
               metadata-uri: "classpath:idp-metadata.xml"
             acs:
-              location: "http://backend-keycloak-auth:8080/realms/My_realm/broker/suomifi-ilta-saml/endpoint"
+              location: "http://backend-keycloak-auth:8080/realms/My_realm/broker/suomifi-ilta-saml/{registrationId}"
             entity-id: "https://ilta.112.fi/auth/dev/keycloak/redirect2"
 
