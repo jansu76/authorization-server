@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  db2:
-    image: postgres:13.5
+  db4:
+    image: keycloak-backup--db4-20231127
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
       POSTGRES_USER: my_admin2
@@ -10,8 +10,8 @@ services:
       POSTGRES_DB: keycloak_db
     ports:
       - 5432:5432
-  kc2:
-    image: keycloak-backup-20230821
+  kc4:
+    image: keycloak-backup--kc4-20231127
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: db
@@ -28,18 +28,16 @@ services:
       - start-dev
       - --import-realm
       - --features declarative-user-profile
-#      - --log-level="TRACE,org.keycloak.saml.SAMLRequestParser:debug,org.keycloak.saml.SAML2LoginResponseBuilder:trace"
     volumes:
-      - /home/janne/projects/häti/prototyping/keycloak/evaka-example:/opt/keycloak/data/import
       - $PWD/server.crt.pem:/opt/keycloak/conf/server.crt.pem
       - $PWD/server.key.pem:/opt/keycloak/conf/server.key.pem
     ports:
       - 8080:8080
       - 443:8443
     depends_on:
-      - db2
-      - smtp
-  smtp:
+      - db4
+      - smtp3
+  smtp3:
     image: mailhog/mailhog
     ports:
       - "1025:1025" # smtp
