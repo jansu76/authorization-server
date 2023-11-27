@@ -32,12 +32,12 @@ frontend-react$ npm run start
 
 ### Initial Keycloak configuration
 
-Configuration is explained in youtube video + some extra configuration is needed for Suomifi-tunnistus:
+Basic configuration is explained in youtube video + some extra configuration is needed for Suomifi-tunnistus:
 - https://www.youtube.com/watch?v=hfeOqvHxHO8
 
 In written form, do:
 
-#### Create realm and OIDC client
+#### Create realm and OIDC client configuration
 
 1. login to http://backend-keycloak-auth:8080/ with keycloak credentials (see docker-compose.yml)
 2. create new real `My_realm` (note accidental uppercase M, as opposed to lowercase in the video, to match other configuration)
@@ -84,7 +84,7 @@ In written form, do:
         -   Port: `1025`
         -   Other as defaults
 
-#### Add identity profiler for Suomifi authentication 
+#### Add identity profile for Suomifi authentication 
 
 1. Add Identity provider
     - Navigate to `Identity Providers` -> `SAML v2.0`
